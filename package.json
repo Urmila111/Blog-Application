@@ -1,0 +1,21 @@
+{
+  "name": "blogbackend",
+  "version": "1.0.0",
+  "description": "Blog Application",
+  "keywords": [
+    "javascript",
+    "backend",
+    "blog"
+  ],
+  "license": "ISC",
+  "author": "Urmila Basnet",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
