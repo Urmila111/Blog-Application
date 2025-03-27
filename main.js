@@ -4,7 +4,7 @@ const app = express();
 
 mongoose
 .connect(
-    "mongodb+srv://genius:genius123@cluster0.cscvf5v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://genius:<db_password>@cluster0.cscvf5v.mongodb.net/"
 )
 .then(()=>app.listen(5000))
 .then(()=>
