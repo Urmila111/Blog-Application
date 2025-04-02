@@ -44,7 +44,7 @@ export const signup = async(req,res,next) => {
      return res.status(201).json({user})
 };
 
-const login = async(req, res, next )=>{
+export const login = async(req, res, next )=>{
    const {email, password} = req.body;
    let existingUser;
    try {
@@ -57,4 +57,10 @@ const login = async(req, res, next )=>{
       .status(404)
       .json({message: "couldn't find the User  by this email"})
    }
+
+   const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
+   if(!isPasswordCorrect){
+      return res.status(400).json({message:"Incorrect Password"})
+   }
+   return res.status(200).json({message:"Login Successfull"})
 }
