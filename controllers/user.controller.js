@@ -19,7 +19,7 @@ export const signup = async(req,res,next) => {
 
      let existingUser;
      try {
-        existingUser = await User.findOne((email))
+        existingUser = await User.findOne({email})
      } catch (err) {
         console.log(err);
      }
@@ -38,7 +38,7 @@ export const signup = async(req,res,next) => {
 
      try {
        await user.save()
-     } catch (error) {
+     } catch (err) {
         console.log(err);    
      }
      return res.status(201).json({user})
@@ -48,14 +48,14 @@ export const login = async(req, res, next )=>{
    const {email, password} = req.body;
    let existingUser;
    try {
-      existingUser = await User.findOne((email))
+      existingUser = await User.findOne({email});
    } catch (err) {
-      console.log(err);
+     return console.log(err);
    }
    if( !existingUser) {
       return res
       .status(404)
-      .json({message: "couldn't find the User  by this email"})
+      .json({message: "couldn't find the User by this email"})
    }
 
    const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
