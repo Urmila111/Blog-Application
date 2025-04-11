@@ -2,9 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import {router} from "./routes/user.routes.js";
 const app = express();
-app.use(express.json())
-
-app.use("/api/user", router)
+app.use(express.json());
+app.use("/api/user", router);
+app.use("/api/bog", blogRouter);
 mongoose
 .connect(
     "mongodb+srv://genius:genius123@cluster0.cscvf5v.mongodb.net/"
