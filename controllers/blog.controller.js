@@ -47,7 +47,7 @@ export const updateBlog = async(req,res,next) => {
         return res.status(500).json({message: "Unable to update blog"})
     }
     return res.status(200).json({ blog });
-}
+};
 export const getById = async(req, res, next)=> {
     const id = req.params.id;
     let blog;
