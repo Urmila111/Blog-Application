@@ -17,10 +17,10 @@ const userSchema = new Schema(
             required: true,
             minlength: 6
         },
-        blog: [
-            {type: mongoose.Types.ObjectId,
-            ref: "Blog",
-            required: true
+        blogs: [
+             {type: mongoose.Types.ObjectId,
+             ref: "Blog",
+             required: true
         }
     ]
     },
